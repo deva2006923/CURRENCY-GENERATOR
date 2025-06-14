@@ -1,0 +1,25 @@
+# CURRENCY-GENERATORimport java.util.Scanner;
+
+public class CurrencyGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int[] denominations = {2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+
+        System.out.print("Enter the amount: ₹");
+        int amount = scanner.nextInt();
+
+        System.out.println("\nCurrency Denominations for ₹" + amount + ":");
+
+        for (int denom : denominations) {
+            if (amount >= denom) {
+                int count = amount / denom;
+                amount = amount % denom;
+                System.out.println(denom + " x " + count);
+            }
+        }
+
+        scanner.close();
+    }
+}
